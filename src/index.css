@@ -1,0 +1,124 @@
+/* ============================================================
+   STYLES GLOBAUX — Hôtelière 2.0
+   Reset minimal + typographie + utilitaires
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary:   #1B3A6B;
+  --secondary: #2980B9;
+  --success:   #27AE60;
+  --danger:    #E74C3C;
+  --warning:   #F39C12;
+  --bg:        #f4f4f4;
+  --white:     #ffffff;
+  --text:      #374151;
+  --muted:     #6b7280;
+  --border:    #dce1e7;
+
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  /* Annule le style Vite par défaut */
+  text-align: left;
+  border-inline: none;
+}
+
+/* Titres */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.3;
+  color: var(--primary);
+}
+
+/* Liens */
+a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Inputs et selects par défaut */
+input, select, textarea, button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Scrollbar personnalisée (Webkit) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Animation spin globale */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Navbar responsive */
+@media (max-width: 768px) {
+  .desktop-nav { display: none !important; }
+  .mobile-menu-btn { display: block !important; }
+}
+
+/* Transition douce sur tous les boutons */
+button {
+  transition: opacity 0.2s, background-color 0.2s, transform 0.1s;
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Images responsives */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Sélection texte */
+::selection {
+  background-color: var(--secondary);
+  color: #ffffff;
+}
