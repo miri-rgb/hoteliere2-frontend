@@ -296,7 +296,7 @@ export default function HotelDetailPage() {
   const services    = Array.isArray(hotel?.services) ? hotel.services : [];
   const avis        = Array.isArray(hotel?.avis)     ? hotel.avis     : [];
   const tousLesAvis = [...avisNouveaux, ...avis];
-  const nomService = (s) => (typeof s === 'string' ? s : s?.nom ?? '');
+  const nomService = (s) => (typeof s === 'string' ? s : s?.nom_service ?? s?.nom ?? '');
   const nuits      = nbNuits(dates.date_arrivee, dates.date_depart);
   const prixTotal  = chambreSelectionnee ? nuits * chambreSelectionnee.prix_nuit : 0;
 

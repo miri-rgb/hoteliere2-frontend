@@ -144,7 +144,7 @@ const HotelCard = ({ hotel }) => {
                 padding: '2px 8px',
                 borderRadius: '12px',
                 fontWeight: '500',
-              }}>{s.nom ?? s}</span>
+              }}>{s.nom_service ?? s.nom ?? s}</span>
             ))}
           </div>
         )}
